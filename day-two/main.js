@@ -26,7 +26,7 @@ const playByPlay = {
   "Shears": { "Boulder": "Loss", "Parchment": "Win", "Shears": "Draw" },
 }
 
-function rockPaperScissors(playerOne, playerTwo) {
+function boulderParchmentShears(playerOne, playerTwo) {
   const playerOnePlay = inputToMeaning[playerOne];
   const playerTwoPlay = inputToMeaning[playerTwo];
 
@@ -42,12 +42,12 @@ function testStrategy(filename) {
   let total = 0;
   for (let play of plays) {
     const playerInputs = play.split(' ');
-    total += rockPaperScissors(playerInputs[0], playerInputs[1]);
+    total += boulderParchmentShears(playerInputs[0], playerInputs[1]);
   }
   return total;
 }
 
 module.exports = {
-  rockPaperScissors,
+  boulderParchmentShears,
   testStrategy
 }
