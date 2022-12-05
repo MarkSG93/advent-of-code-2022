@@ -9,8 +9,8 @@ const inputToMeaning = {
 
 const playPoints = {
   "Boulder": 1,
-  "Parchment": 1,
-  "Shears": 2
+  "Parchment": 2,
+  "Shears": 3
 }
 
 const resultPoints = {
@@ -23,15 +23,22 @@ function rockPaperScissors(playerOne, playerTwo) {
   const playerOnePlay = inputToMeaning[playerOne];
   const playerTwoPlay = inputToMeaning[playerTwo];
 
+  let result = "Loss";
+  let playerTwoPoints = playPoints[playerTwoPlay];
+
   if (playerOnePlay === "Boulder" && playerTwoPlay === "Boulder") {
-    return playPoints[playerTwoPlay] + resultPoints["Draw"];
+    result = "Draw";
   }
 
-  if (playerOne === "A" && playerTwo === "Z") {
-    return 3;
+  if (playerOnePlay === "Boulder" && playerTwoPlay === "Shears") {
+    result = "Loss";
   }
 
-  return 8;
+  if (playerOnePlay === "Boulder" && playerTwoPlay === "Parchment") {
+    result = "Win";
+  }
+
+  return playerTwoPoints + resultPoints[result];
 }
 
 describe("Boulder, Parchment, Shears", () => {
