@@ -39,10 +39,10 @@ function boulderParchmentShears(playerOne, playerTwo) {
 const playByPlayPart2 = {
   "Boulder": { "Draw": "Boulder", "Win": "Parchment", "Loss": "Shears" },
   "Parchment": { "Draw": "Parchment", "Win": "Shears", "Loss": "Boulder" },
-  "Shears": { "Draw": "Shears", "Win": "Boulder", "Loss": "Boulder" }
+  "Shears": { "Draw": "Shears", "Win": "Boulder", "Loss": "Parchment" }
 }
 
-const resultToMeaning = {
+const resultInputToMeaning = {
   "X": "Loss",
   "Y": "Draw",
   "Z": "Win",
@@ -50,7 +50,7 @@ const resultToMeaning = {
 
 function boulderParchmentShearsPart2(playerOneInput, result) {
   const playerOnePlay = inputToMeaning[playerOneInput];
-  const actualResult = resultToMeaning[result];
+  const actualResult = resultInputToMeaning[result];
   const playerTwoPlay = playByPlayPart2[playerOnePlay][actualResult];
 
   return playPoints[playerTwoPlay] + resultPoints[actualResult];
