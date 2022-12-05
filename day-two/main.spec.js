@@ -1,4 +1,5 @@
-const { rockPaperScissors } = require('./main');
+const fs = require('fs');
+const { rockPaperScissors, testStrategy } = require('./main');
 
 describe("Boulder, Parchment, Shears", () => {
   describe("Given player one chooses Boulder and you choose Parchment", () => {
@@ -21,7 +22,6 @@ describe("Boulder, Parchment, Shears", () => {
       expect(result).toEqual(3);
     });
   });
-
   describe("Given player one chooses Parchment and you choose Boulder", () => {
     it("You receive 1 points", () => {
       const result = rockPaperScissors("B", "X");
@@ -36,10 +36,6 @@ describe("Boulder, Parchment, Shears", () => {
     });
   });
 });
-
-function testStrategy(filename) {
-  return 0;
-}
 
 describe("Test Strategy", () => {
   describe("Given a strategy", () => {

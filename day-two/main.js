@@ -1,3 +1,4 @@
+const fs = require("fs");
 const inputToMeaning = {
   "A": "Boulder",
   "B": "Parchment",
@@ -35,6 +36,18 @@ function rockPaperScissors(playerOne, playerTwo) {
   return playerTwoPoints + resultPoints[result];
 }
 
+function testStrategy(filename) {
+  const file = fs.readFileSync(filename, 'utf-8')
+  const plays = file.split('\n');
+  let total = 0;
+  for (let play of plays) {
+    const playerInputs = play.split(' ');
+    total += rockPaperScissors(playerInputs[0], playerInputs[1]);
+  }
+  return total;
+}
+
 module.exports = {
-  rockPaperScissors
+  rockPaperScissors,
+  testStrategy
 }
