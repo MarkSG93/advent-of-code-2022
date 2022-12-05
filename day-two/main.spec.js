@@ -44,26 +44,33 @@ describe("Day 2", () => {
         expect(result).toEqual(15);
       });
     });
+
+    describe("Given a strategy and part 2 logic", () => {
+      it("Calculates and outputs the score of the strategy", () => {
+        const result = testStrategy("test-input.txt", 2);
+        expect(result).toEqual(12);
+      });
+    })
   });
 
   describe("Part 2 - the dipshit elf gives you the actual meaning to the input", () => {
     describe("Given player one plays Boulder and the result is a Draw", () => {
       it("You receive 4 points", () => {
-        const result = boulderParchmentShearsPart2("A", "Draw");
+        const result = boulderParchmentShearsPart2("A", "Y");
         expect(result).toEqual(4);
       });
     });
 
     describe("Given player one plays Shears and the result is a Win", () => {
       it("You receive 4 points", () => {
-        const result = boulderParchmentShearsPart2("C", "Win");
+        const result = boulderParchmentShearsPart2("C", "Z");
         expect(result).toEqual(7);
       });
     });
 
     describe("Given player one plays Parchment and the result is a Loss", () => {
       it("You receive 1 points", () => {
-        const result = boulderParchmentShearsPart2("B", "Loss");
+        const result = boulderParchmentShearsPart2("B", "X");
         expect(result).toEqual(1);
       });
     });

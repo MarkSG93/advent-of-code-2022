@@ -42,11 +42,18 @@ const playByPlayPart2 = {
   "Shears": { "Draw": "Shears", "Win": "Boulder", "Loss": "Boulder" }
 }
 
+const resultToMeaning = {
+  "X": "Loss",
+  "Y": "Draw",
+  "Z": "Win",
+}
+
 function boulderParchmentShearsPart2(playerOneInput, result) {
   const playerOnePlay = inputToMeaning[playerOneInput];
-  const playerTwoPlay = playByPlayPart2[playerOnePlay][result];
+  const actualResult = resultToMeaning[result];
+  const playerTwoPlay = playByPlayPart2[playerOnePlay][actualResult];
 
-  return playPoints[playerTwoPlay] + resultPoints[result];
+  return playPoints[playerTwoPlay] + resultPoints[actualResult];
 }
 
 function testStrategy(filename, part = 1) {
