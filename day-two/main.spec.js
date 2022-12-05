@@ -45,3 +45,16 @@ describe("Test Strategy", () => {
     });
   });
 });
+
+function rockPaperScissors2(playerOneInput, result) {
+  return 1;
+}
+
+describe("Part 2 - the dipshit elf gives you the actual meaning to the input", () => {
+  describe("Given player one plays Boulder and the result is a Draw", () => {
+    it("You receive 4 points", () => {
+      const result = rockPaperScissors2("A", "Draw");
+      expect(result).toEqual(4);
+    });
+  });
+});
